@@ -103,9 +103,19 @@
             height: 1px;
             background: linear-gradient(90deg, transparent, rgba(129, 236, 255, 0.3), transparent);
         }
+        @keyframes contactPulse {
+            0%   { box-shadow: 0 0 0 0 rgba(129,236,255,0), 0 0 0 0 rgba(129,236,255,0); border-color: rgba(255,255,255,0.08); }
+            20%  { box-shadow: 0 0 0 6px rgba(129,236,255,0.35), 0 0 30px 10px rgba(129,236,255,0.15); border-color: rgba(129,236,255,0.9); }
+            60%  { box-shadow: 0 0 0 14px rgba(129,236,255,0.08), 0 0 50px 20px rgba(129,236,255,0.08); border-color: rgba(129,236,255,0.5); }
+            100% { box-shadow: 0 0 0 0 rgba(129,236,255,0), 0 0 0 0 rgba(129,236,255,0); border-color: rgba(255,255,255,0.08); }
+        }
+        .contact-highlight {
+            animation: contactPulse 2s ease-out forwards !important;
+        }
     </style>
 </head>
 <body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col">
+<canvas id="particle-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;"></canvas>
 <nav class="fixed top-0 w-full z-50 border-b border-white/10 bg-black/60 backdrop-blur-xl">
 <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
 <div class="flex flex-col">
@@ -120,11 +130,7 @@
 <a class="nav-item font-body text-sm text-white/70 hover:text-white transition-colors" href="#contact">Contact</a>
 </div>
 <div class="flex items-center gap-4">
-<div class="hidden md:flex gap-4 text-[#00E5FF]">
-<span class="material-symbols-outlined text-xl" data-icon="terminal">terminal</span>
-<span class="material-symbols-outlined text-xl" data-icon="bug_report">bug_report</span>
-</div>
-<a href="mailto:fahimsndrd@gmail.com" onclick="copyEmail(event, this)" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-br from-primary to-primary-dim text-on-primary-fixed font-bold py-2 px-6 rounded-full hover:scale-105 transition-all w-[130px] text-center">Hire Me</a>
+<a href="mailto:fahimsndrd@gmail.com" onclick="copyEmail(event, this)" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-br from-primary to-primary-dim text-on-primary-fixed font-bold py-1.5 px-4 text-sm w-[120px] md:py-2 md:px-6 md:text-base md:w-[150px] rounded-full hover:scale-105 transition-all text-center">Get in Touch</a>
 </div>
 </div>
 </nav>
@@ -134,8 +140,8 @@
 <div class="flex justify-center">
 <div class="relative group animate-on-scroll opacity-0 -translate-x-8">
 <div class="absolute -inset-4 bg-primary/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
-<div class="glass-panel animate-on-scroll opacity-0 translate-y-8 neon-border rounded-3xl overflow-hidden aspect-[4/5] w-[260px] md:w-[400px] relative z-10 cursor-pointer" onclick="document.getElementById('profile-img').classList.remove('grayscale');" oncontextmenu="return false;">
-<img id="profile-img" alt="Md Fahim Mahmud" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105 pointer-events-none select-none" draggable="false" style="-webkit-user-drag: none; -webkit-touch-callout: none;" src="./assets/profile-optimized.jpg"/>
+<div class="animate-on-scroll opacity-0 translate-y-8 rounded-3xl overflow-hidden aspect-[4/5] w-[260px] md:w-[400px] relative z-10 cursor-pointer transition-all duration-700 hover:scale-[1.02]" style="-webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%); mask-image: linear-gradient(to bottom, black 60%, transparent 100%);" onclick="document.getElementById('profile-img').classList.remove('grayscale');" oncontextmenu="return false;">
+<img id="profile-img" alt="Md Fahim Mahmud" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 pointer-events-none select-none mix-blend-luminosity group-hover:mix-blend-normal" draggable="false" style="-webkit-user-drag: none; -webkit-touch-callout: none;" src="./assets/profile-optimized.jpg"/>
 </div>
 </div>
 </div>
@@ -151,7 +157,7 @@
 <p class="font-body text-lg text-on-surface-variant max-w-xl leading-relaxed">
                         Detail-oriented Manual App Tester with a strong foundation in Flutter UI development. Skilled at identifying visual inconsistencies, layout overflows, and navigation issues. Transitioning towards Automated QA to help developers deliver pixel-perfect user experiences.
                     </p>
-<div class="glass-panel p-4 rounded-2xl flex flex-wrap gap-6 items-center border border-white/5 top-light-border hover:-translate-y-2 hover:border-primary/30 transition-all duration-500">
+<div id="contact-tile" class="glass-panel p-4 rounded-2xl grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 border border-white/5 top-light-border hover:-translate-y-2 hover:border-primary/30 transition-all duration-500">
 <a href="https://github.com/Fahim-M-1" target="_blank" class="flex items-center gap-2 group">
 <span class="material-symbols-outlined text-primary text-sm group-hover:text-white transition-colors" data-icon="code">code</span>
 <span class="text-sm font-medium group-hover:text-white transition-colors">github.com/Fahim-M-1</span>
@@ -164,6 +170,10 @@
 <span class="material-symbols-outlined text-tertiary text-sm" data-icon="location_on">location_on</span>
 <span class="text-sm font-medium">Dhaka, Bangladesh</span>
 </div>
+<a href="./assets/CV - Fahim Mahmud (Manual QA & Flutter UI).pdf" download class="flex items-center gap-2 group">
+<span class="material-symbols-outlined text-primary text-sm group-hover:text-white transition-colors">download</span>
+<span class="text-sm font-medium text-primary group-hover:text-white transition-colors">Download CV</span>
+</a>
 </div>
 </div>
 </div>
@@ -175,7 +185,7 @@
 <p class="animate-on-scroll opacity-0 translate-y-8 font-body text-on-surface-variant text-lg" data-delay="0.1">The tools and methodologies ensuring zero-overflow layouts.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-auto md:auto-rows-[250px]">
-<div class="md:col-span-2 md:row-span-2 glass-panel animate-on-scroll opacity-0 translate-y-8 top-light-border rounded-3xl p-8 flex flex-col justify-between group overflow-hidden relative border border-white/5">
+<div data-tile-particles="129,236,255" class="md:col-span-2 md:row-span-2 glass-panel animate-on-scroll opacity-0 translate-y-8 top-light-border rounded-3xl p-8 flex flex-col justify-between group overflow-hidden relative border border-white/5">
 <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 <div>
 <span class="material-symbols-outlined text-4xl text-primary mb-6" data-icon="rule">rule</span>
@@ -191,14 +201,14 @@
 <span class="inline-flex items-center gap-1.5 bg-white/5 text-on-surface-variant text-sm px-4 py-2 rounded-full border border-white/10 hover:border-primary/50 hover:text-primary transition-all"><span class="material-symbols-outlined text-[1em]">draw</span> Figma Design</span>
 </div>
 </div>
-<div class="glass-panel animate-on-scroll opacity-0 translate-y-8 top-light-border rounded-3xl p-8 flex flex-col justify-between border border-white/5 group hover:border-secondary/30 transition-all">
+<div data-tile-particles="214,116,255" class="glass-panel animate-on-scroll opacity-0 translate-y-8 top-light-border rounded-3xl p-8 flex flex-col justify-between border border-white/5 group hover:border-secondary/30 transition-all">
 <div>
 <span class="material-symbols-outlined text-3xl text-secondary mb-4" data-icon="widgets">widgets</span>
 <h3 class="font-headline text-xl font-bold text-on-surface mb-2">Flutter &amp; UI</h3>
 <p class="font-body text-on-surface-variant text-sm">Widget Tree Structure, Material &amp; Cupertino Design, Responsive MediaQueries.</p>
 </div>
 </div>
-<div class="glass-panel animate-on-scroll opacity-0 translate-y-8 top-light-border rounded-3xl p-8 flex flex-col justify-between border border-white/5 group hover:border-tertiary/30 transition-all">
+<div data-tile-particles="172,137,255" class="glass-panel animate-on-scroll opacity-0 translate-y-8 top-light-border rounded-3xl p-8 flex flex-col justify-between border border-white/5 group hover:border-tertiary/30 transition-all">
 <div>
 <span class="material-symbols-outlined text-3xl text-tertiary mb-4" data-icon="construction">construction</span>
 <h3 class="font-headline text-xl font-bold text-on-surface mb-2">Workflow Tools</h3>
@@ -240,7 +250,7 @@
 <div class="glass-panel animate-on-scroll opacity-0 translate-y-8 top-light-border rounded-3xl p-8 border border-white/5 flex flex-col justify-center items-center text-center group hover:-translate-y-2 hover:border-primary/30 transition-all duration-500 cursor-crosshair">
 <span class="material-symbols-outlined text-4xl text-white/40 mb-4 group-hover:text-primary transition-colors duration-500" data-icon="phone_iphone">phone_iphone</span>
 <h4 class="font-headline font-bold text-lg mb-1">iOS Lab</h4>
-<p class="text-sm text-on-surface-variant inline-flex items-center gap-1.5"><span class="material-symbols-outlined text-[1em]">terminal</span> iOS 16.2 Emulator</p>
+<p class="text-sm text-on-surface-variant inline-flex items-center gap-1.5"><span class="material-symbols-outlined text-[1em]">terminal</span> iOS 26.3 Emulator</p>
 <p class="text-[10px] text-white/20 mt-2 italic inline-flex items-center gap-1"><span class="material-symbols-outlined text-[1em]">add_circle</span> Additional devices upon request</p>
 <div class="mt-4 w-full h-1 bg-white/5 rounded-full overflow-hidden w-full">
 <div class="w-3/4 h-full bg-primary shadow-[0_0_10px_#81ecff] relative overflow-hidden">
@@ -330,7 +340,7 @@
 <p class="text-xs text-white/40 mt-1 uppercase tracking-tighter">Manual QA &amp; Flutter UI Architect</p>
 </div>
 <div class="font-body text-[10px] uppercase tracking-[0.2em] text-[#00E5FF] text-center">
-                © 2024 CV - FAHIM MAHMUD. PIXEL-PERFECT AUDITING.
+                © 2026 FAHIM MAHMUD. PIXEL-PERFECT AUDITING.
             </div>
 <div class="flex gap-8">
 <a class="text-xs uppercase tracking-widest text-white/40 hover:text-white transition-all border-b border-transparent hover:border-primary pb-1" href="https://github.com/Fahim-M-1">Github</a>
