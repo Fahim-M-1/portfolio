@@ -245,7 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 entry.target.style.transitionDelay = `${delay}s`;
                 
                 // Remove starting transforms, opacity will be handled by utility classes
-                entry.target.classList.remove('opacity-0', 'translate-y-8', 'translate-x-[50px]', '-translate-x-[50px]', 'scale-90');
+                entry.target.classList.remove('opacity-0', 'translate-y-8', 'translate-x-[50px]', '-translate-x-[50px]', 'translate-x-8', '-translate-x-8', 'scale-90');
                 entry.target.classList.add('opacity-100', 'translate-y-0', 'translate-x-0', 'scale-100');
                 
                 // Unobserve after animating once (viewport={{ once: true }})
