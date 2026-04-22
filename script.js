@@ -199,10 +199,7 @@
 /* ============================================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Initialize Icons
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
+    // 1. Initialize Icons (Material Symbols used natively via HTML)
 
     const navItems = document.querySelectorAll('.nav-item');
     const sections = Array.from(navItems).map(item => item.getAttribute('href').substring(1));
