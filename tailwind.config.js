@@ -62,6 +62,15 @@ module.exports = {
               "lg": "0.25rem",
               "xl": "0.5rem",
               "full": "0.75rem"
+          },
+          keyframes: {
+              'hero-fade': {
+                  '0%': { opacity: '0', transform: 'translateY(2rem)' },
+                  '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+          },
+          animation: {
+              'hero': 'hero-fade 0.8s ease-out forwards',
           }
       },
   },

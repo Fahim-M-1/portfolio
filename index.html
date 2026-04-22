@@ -35,14 +35,14 @@
 <section id="home" class="min-h-[921px] flex items-center px-8 max-w-7xl mx-auto relative">
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
 <div class="flex justify-center">
-<div class="relative group animate-on-scroll opacity-0 -translate-x-8">
+<div class="relative group opacity-0 animate-hero">
 <div class="absolute -inset-4 bg-primary/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
-<div class="animate-on-scroll opacity-0 translate-y-8 rounded-3xl overflow-hidden aspect-[4/5] w-[260px] md:w-[400px] relative z-10 cursor-pointer transition-all duration-700 hover:scale-[1.02]" style="-webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%); mask-image: linear-gradient(to bottom, black 60%, transparent 100%);" onclick="document.getElementById('profile-img').classList.remove('grayscale');" oncontextmenu="return false;">
+<div class="rounded-3xl overflow-hidden aspect-[4/5] w-[260px] md:w-[400px] relative z-10 cursor-pointer transition-all duration-700 hover:scale-[1.02]" style="-webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%); mask-image: linear-gradient(to bottom, black 60%, transparent 100%);" onclick="document.getElementById('profile-img').classList.remove('grayscale');" oncontextmenu="return false;">
 <img id="profile-img" alt="Md Fahim Mahmud" fetchpriority="high" width="400" height="500" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 pointer-events-none select-none mix-blend-luminosity group-hover:mix-blend-normal" draggable="false" style="-webkit-user-drag: none; -webkit-touch-callout: none;" src="./assets/profile-optimized.webp"/>
 </div>
 </div>
 </div>
-<div class="space-y-6 animate-on-scroll opacity-0 translate-x-8">
+<div class="space-y-6 opacity-0 animate-hero">
 <div>
 <span class="text-primary font-bold tracking-widest text-sm uppercase mb-2 block">Available for New Projects</span>
 <h1 class="font-headline text-5xl md:text-7xl font-extrabold text-on-surface mb-2">
@@ -255,6 +255,6 @@
         <button onclick="changeModalImg(1)" aria-label="Next Image" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white backdrop-blur transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>
     </div>
 </div>
-    <script src="./script.js"></script>
+    <script src="./script.js?v=2"></script>
 </body>
 </html>
