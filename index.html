@@ -2,117 +2,14 @@
 <html class="dark scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="description" content="Portfolio of Md Fahim Mahmud, a Junior App Tester and Flutter UI Architect."/>
 <title>Md. Fahim Mahmud | Manual QA &amp; Flutter UI Architect</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="preload" as="image" href="./assets/profile-optimized.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "tertiary-fixed-dim": "#b190ff",
-                        "surface": "#0e0e0e",
-                        "surface-tint": "#81ecff",
-                        "primary": "#81ecff",
-                        "outline-variant": "#484847",
-                        "error-dim": "#d7383b",
-                        "on-primary-fixed": "#003840",
-                        "tertiary": "#ac89ff",
-                        "on-secondary-container": "#fff5fc",
-                        "surface-container-low": "#131313",
-                        "secondary-fixed": "#f1c1ff",
-                        "on-primary-fixed-variant": "#005762",
-                        "surface-container-lowest": "#000000",
-                        "surface-container": "#1a1a1a",
-                        "on-tertiary-fixed": "#1f0052",
-                        "on-surface-variant": "#adaaaa",
-                        "on-primary-container": "#004d57",
-                        "secondary-fixed-dim": "#eaaeff",
-                        "on-tertiary": "#290067",
-                        "surface-bright": "#2c2c2c",
-                        "inverse-on-surface": "#565555",
-                        "on-tertiary-container": "#f8f1ff",
-                        "tertiary-fixed": "#bda1ff",
-                        "background": "#0e0e0e",
-                        "inverse-surface": "#fcf9f8",
-                        "surface-variant": "#262626",
-                        "on-secondary-fixed": "#580079",
-                        "error-container": "#9f0519",
-                        "primary-container": "#00e3fd",
-                        "on-secondary": "#390050",
-                        "primary-fixed-dim": "#00d4ec",
-                        "secondary-dim": "#bb00fc",
-                        "tertiary-dim": "#874cff",
-                        "on-secondary-fixed-variant": "#8400b3",
-                        "on-surface": "#ffffff",
-                        "secondary": "#d674ff",
-                        "outline": "#767575",
-                        "surface-dim": "#0e0e0e",
-                        "secondary-container": "#9900cf",
-                        "on-tertiary-fixed-variant": "#4700a7",
-                        "surface-container-high": "#20201f",
-                        "surface-container-highest": "#262626",
-                        "tertiary-container": "#7000ff",
-                        "on-primary": "#005762",
-                        "inverse-primary": "#006976",
-                        "on-error": "#490006",
-                        "on-background": "#ffffff",
-                        "on-error-container": "#ffa8a3",
-                        "error": "#ff716c",
-                        "primary-dim": "#00d4ec",
-                        "primary-fixed": "#00e3fd"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
-                    }
-                },
-            },
-        }
-    </script>
-<style type="text/tailwindcss">
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0e0e0e;
-            color: #ffffff;
-        }
-        h1, h2, h3, h4, h5, h6, .font-headline {
-            font-family: 'Manrope', sans-serif;
-            letter-spacing: -0.02em;
-        }
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .neon-border {
-            box-shadow: 0 0 15px rgba(129, 236, 255, 0.3), inset 0 0 10px rgba(129, 236, 255, 0.2);
-            border: 2px solid rgba(129, 236, 255, 0.6);
-        }
-        .top-light-border::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(129, 236, 255, 0.3), transparent);
-        }
-        @keyframes contactPulse {
-            0%   { box-shadow: 0 0 0 0 rgba(129,236,255,0), 0 0 0 0 rgba(129,236,255,0); border-color: rgba(255,255,255,0.08); }
-            20%  { box-shadow: 0 0 0 6px rgba(129,236,255,0.35), 0 0 30px 10px rgba(129,236,255,0.15); border-color: rgba(129,236,255,0.9); }
-            60%  { box-shadow: 0 0 0 14px rgba(129,236,255,0.08), 0 0 50px 20px rgba(129,236,255,0.08); border-color: rgba(129,236,255,0.5); }
-            100% { box-shadow: 0 0 0 0 rgba(129,236,255,0), 0 0 0 0 rgba(129,236,255,0); border-color: rgba(255,255,255,0.08); }
-        }
-        .contact-highlight {
-            animation: contactPulse 2s ease-out forwards !important;
-        }
-    </style>
+<link rel="stylesheet" href="./output.css">
 </head>
 <body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col">
 <canvas id="particle-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;"></canvas>
@@ -141,7 +38,7 @@
 <div class="relative group animate-on-scroll opacity-0 -translate-x-8">
 <div class="absolute -inset-4 bg-primary/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
 <div class="animate-on-scroll opacity-0 translate-y-8 rounded-3xl overflow-hidden aspect-[4/5] w-[260px] md:w-[400px] relative z-10 cursor-pointer transition-all duration-700 hover:scale-[1.02]" style="-webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%); mask-image: linear-gradient(to bottom, black 60%, transparent 100%);" onclick="document.getElementById('profile-img').classList.remove('grayscale');" oncontextmenu="return false;">
-<img id="profile-img" alt="Md Fahim Mahmud" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 pointer-events-none select-none mix-blend-luminosity group-hover:mix-blend-normal" draggable="false" style="-webkit-user-drag: none; -webkit-touch-callout: none;" src="./assets/profile-optimized.jpg"/>
+<img id="profile-img" alt="Md Fahim Mahmud" fetchpriority="high" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 pointer-events-none select-none mix-blend-luminosity group-hover:mix-blend-normal" draggable="false" style="-webkit-user-drag: none; -webkit-touch-callout: none;" src="./assets/profile-optimized.jpg"/>
 </div>
 </div>
 </div>
@@ -248,7 +145,7 @@
 </div>
 </div>
 <div class="glass-panel animate-on-scroll opacity-0 translate-y-8 top-light-border rounded-3xl p-8 border border-white/5 flex flex-col justify-center items-center text-center group hover:-translate-y-2 hover:border-primary/30 transition-all duration-500 cursor-crosshair">
-<span class="material-symbols-outlined text-4xl text-white/40 mb-4 group-hover:text-primary transition-colors duration-500" data-icon="phone_iphone">phone_iphone</span>
+<span class="material-symbols-outlined text-4xl text-white/60 mb-4 group-hover:text-primary transition-colors duration-500" data-icon="phone_iphone">phone_iphone</span>
 <h4 class="font-headline font-bold text-lg mb-1">iOS Lab</h4>
 <p class="text-sm text-on-surface-variant inline-flex items-center gap-1.5"><span class="material-symbols-outlined text-[1em]">terminal</span> iOS 26.3 Emulator</p>
 <p class="text-[10px] text-white/20 mt-2 italic inline-flex items-center gap-1"><span class="material-symbols-outlined text-[1em]">add_circle</span> Additional devices upon request</p>
@@ -259,7 +156,7 @@
 </div>
 </div>
 <div class="glass-panel animate-on-scroll opacity-0 translate-y-8 top-light-border rounded-3xl p-8 border border-white/5 flex flex-col justify-center items-center text-center group hover:-translate-y-2 hover:border-secondary/30 transition-all duration-500 cursor-crosshair">
-<span class="material-symbols-outlined text-4xl text-white/40 mb-4 group-hover:text-secondary transition-colors duration-500" data-icon="phone_android">phone_android</span>
+<span class="material-symbols-outlined text-4xl text-white/60 mb-4 group-hover:text-secondary transition-colors duration-500" data-icon="phone_android">phone_android</span>
 <h4 class="font-headline font-bold text-lg mb-1">Android Lab</h4>
 <p class="text-sm text-on-surface-variant inline-flex items-center gap-1.5"><span class="material-symbols-outlined text-[1em]">terminal</span> v16 (Baklava) Emulator</p>
 <p class="text-xs text-white/30 mt-1 inline-flex items-center gap-1.5"><span class="material-symbols-outlined text-[1em]">smartphone</span> Physical: Galaxy S20FE</p>
@@ -285,9 +182,9 @@
 <div class="glass-panel animate-on-scroll opacity-0 translate-y-8 rounded-3xl overflow-hidden border border-white/5 group hover:-translate-y-2 hover:border-tertiary/30 transition-all duration-500">
 <div class="aspect-video bg-neutral-900 flex overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden relative gallery-container" style="scrollbar-width: none; -ms-overflow-style: none; scroll-behavior: smooth;">
 <div class="absolute bottom-3 right-3 bg-black/70 backdrop-blur border border-white/10 text-white/80 text-[10px] px-3 py-1 rounded-full pointer-events-none z-10 gallery-indicator font-mono">1 / 3</div>
-<img alt="E-commerce UI 1" class="w-full h-full object-cover shrink-0 snap-center transition-all duration-700 opacity-70 group-hover:opacity-100 hover:!opacity-100 hover:scale-[1.03] cursor-zoom-in relative z-0" onclick="openModal(this)" src="./assets/ui-1.png"/>
-<img alt="E-commerce UI 2" class="w-full h-full object-cover shrink-0 snap-center transition-all duration-700 opacity-70 group-hover:opacity-100 hover:!opacity-100 hover:scale-[1.03] cursor-zoom-in relative z-0" onclick="openModal(this)" src="./assets/ui-2.png"/>
-<img alt="E-commerce UI 3" class="w-full h-full object-cover shrink-0 snap-center transition-all duration-700 opacity-70 group-hover:opacity-100 hover:!opacity-100 hover:scale-[1.03] cursor-zoom-in relative z-0" onclick="openModal(this)" src="./assets/ui-3.png"/>
+<img alt="E-commerce UI 1" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center transition-all duration-700 opacity-70 group-hover:opacity-100 hover:!opacity-100 hover:scale-[1.03] cursor-zoom-in relative z-0" onclick="openModal(this)" src="./assets/ui-1.png"/>
+<img alt="E-commerce UI 2" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center transition-all duration-700 opacity-70 group-hover:opacity-100 hover:!opacity-100 hover:scale-[1.03] cursor-zoom-in relative z-0" onclick="openModal(this)" src="./assets/ui-2.png"/>
+<img alt="E-commerce UI 3" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center transition-all duration-700 opacity-70 group-hover:opacity-100 hover:!opacity-100 hover:scale-[1.03] cursor-zoom-in relative z-0" onclick="openModal(this)" src="./assets/ui-3.png"/>
 </div>
 <div class="p-6">
 <div class="flex justify-between items-start mb-4">
@@ -296,36 +193,36 @@
 </div>
 <p class="text-sm text-on-surface-variant mb-6 leading-relaxed">Self-QA focus: Tested on multiple screen sizes to ensure zero "Yellow Tape" overflow errors. Documented and fixed padding/alignment issues.</p>
 <div class="flex flex-wrap gap-2">
-<span class="text-[10px] font-bold text-white/40 border border-white/10 px-2 py-1 rounded uppercase">Zero-Overflow</span>
-<span class="text-[10px] font-bold text-white/40 border border-white/10 px-2 py-1 rounded uppercase">UI Auditing</span>
+<span class="text-[10px] font-bold text-white/60 border border-white/10 px-2 py-1 rounded uppercase">Zero-Overflow</span>
+<span class="text-[10px] font-bold text-white/60 border border-white/10 px-2 py-1 rounded uppercase">UI Auditing</span>
 </div>
 </div>
 </div>
 <div class="glass-panel animate-on-scroll opacity-0 translate-y-8 rounded-3xl overflow-hidden border border-white/5 group hover:-translate-y-2 hover:border-tertiary/30 transition-all duration-500">
 <div class="aspect-video bg-neutral-900 flex overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden relative gallery-container" style="scrollbar-width: none; -ms-overflow-style: none; scroll-behavior: smooth;">
 <div class="absolute bottom-3 right-3 bg-black/70 backdrop-blur border border-white/10 text-white/80 text-[10px] px-3 py-1 rounded-full pointer-events-none z-10 gallery-indicator font-mono">1 / 2</div>
-<img alt="Quiz App Screen 1" class="w-full h-full object-cover shrink-0 snap-center transition-all duration-700 opacity-70 group-hover:opacity-100 hover:!opacity-100 hover:scale-[1.03] cursor-zoom-in relative z-0" onclick="openModal(this)" src="./assets/quiz-1.png"/>
-<img alt="Quiz App Screen 2" class="w-full h-full object-cover shrink-0 snap-center transition-all duration-700 opacity-70 group-hover:opacity-100 hover:!opacity-100 hover:scale-[1.03] cursor-zoom-in relative z-0" onclick="openModal(this)" src="./assets/quiz-2.png"/>
+<img alt="Quiz App Screen 1" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center transition-all duration-700 opacity-70 group-hover:opacity-100 hover:!opacity-100 hover:scale-[1.03] cursor-zoom-in relative z-0" onclick="openModal(this)" src="./assets/quiz-1.png"/>
+<img alt="Quiz App Screen 2" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center transition-all duration-700 opacity-70 group-hover:opacity-100 hover:!opacity-100 hover:scale-[1.03] cursor-zoom-in relative z-0" onclick="openModal(this)" src="./assets/quiz-2.png"/>
 </div>
 <div class="p-6">
 <h3 class="font-headline text-xl font-bold mb-4">Flutter Quiz App</h3>
 <p class="text-sm text-on-surface-variant mb-6 leading-relaxed">Application logic and state management for multi-stage quiz. Focused on navigation and responsive UI/UX for user interaction.</p>
 <div class="flex flex-wrap gap-2">
-<span class="text-[10px] font-bold text-white/40 border border-white/10 px-2 py-1 rounded uppercase">Navigation QA</span>
-<span class="text-[10px] font-bold text-white/40 border border-white/10 px-2 py-1 rounded uppercase">Responsive</span>
+<span class="text-[10px] font-bold text-white/60 border border-white/10 px-2 py-1 rounded uppercase">Navigation QA</span>
+<span class="text-[10px] font-bold text-white/60 border border-white/10 px-2 py-1 rounded uppercase">Responsive</span>
 </div>
 </div>
 </div>
 <div class="glass-panel animate-on-scroll opacity-0 translate-y-8 rounded-3xl overflow-hidden border border-white/5 group hover:-translate-y-2 hover:border-tertiary/30 transition-all duration-500">
 <div class="aspect-video bg-neutral-900 flex items-center justify-center overflow-hidden relative gallery-container">
-<img alt="Ramadan App" class="w-full h-full object-cover transition-all duration-700 opacity-70 group-hover:opacity-100 hover:scale-[1.03] cursor-zoom-in relative z-0" onclick="openModal(this)" src="./assets/ramadan-1.png"/>
+<img alt="Ramadan App" loading="lazy" class="w-full h-full object-cover transition-all duration-700 opacity-70 group-hover:opacity-100 hover:scale-[1.03] cursor-zoom-in relative z-0" onclick="openModal(this)" src="./assets/ramadan-1.png"/>
 </div>
 <div class="p-6">
 <h3 class="font-headline text-xl font-bold mb-4">Ramadan Reminder App</h3>
 <p class="text-sm text-on-surface-variant mb-6 leading-relaxed">Designed and built a reminder application handling time and date. Rigorous functional testing for date/time precision.</p>
 <div class="flex flex-wrap gap-2">
-<span class="text-[10px] font-bold text-white/40 border border-white/10 px-2 py-1 rounded uppercase">Functional QA</span>
-<span class="text-[10px] font-bold text-white/40 border border-white/10 px-2 py-1 rounded uppercase">Date-Logic</span>
+<span class="text-[10px] font-bold text-white/60 border border-white/10 px-2 py-1 rounded uppercase">Functional QA</span>
+<span class="text-[10px] font-bold text-white/60 border border-white/10 px-2 py-1 rounded uppercase">Date-Logic</span>
 </div>
 </div>
 </div>
@@ -337,15 +234,15 @@
 <div class="flex flex-col md:flex-row justify-between items-center px-8 gap-8 max-w-7xl mx-auto">
 <div class="flex flex-col items-center md:items-start">
 <div class="text-xl font-black text-white font-headline">FAHIM MAHMUD</div>
-<p class="text-xs text-white/40 mt-1 uppercase tracking-tighter">Manual QA &amp; Flutter UI Architect</p>
+<p class="text-xs text-white/60 mt-1 uppercase tracking-tighter">Manual QA &amp; Flutter UI Architect</p>
 </div>
 <div class="font-body text-[10px] uppercase tracking-[0.2em] text-[#00E5FF] text-center">
                 © 2026 FAHIM MAHMUD. PIXEL-PERFECT AUDITING.
             </div>
 <div class="flex gap-8">
-<a class="text-xs uppercase tracking-widest text-white/40 hover:text-white transition-all border-b border-transparent hover:border-primary pb-1" href="https://github.com/Fahim-M-1">Github</a>
-<a class="text-xs uppercase tracking-widest text-white/40 hover:text-white transition-all border-b border-transparent hover:border-primary pb-1" href="#">LinkedIn</a>
-<a class="text-xs uppercase tracking-widest text-white/40 hover:text-white transition-all border-b border-transparent hover:border-primary pb-1" href="#">Contact</a>
+<a class="text-xs uppercase tracking-widest text-white/60 hover:text-white transition-all border-b border-transparent hover:border-primary pb-1" href="https://github.com/Fahim-M-1">Github</a>
+<a class="text-xs uppercase tracking-widest text-white/60 hover:text-white transition-all border-b border-transparent hover:border-primary pb-1" href="#">LinkedIn</a>
+<a class="text-xs uppercase tracking-widest text-white/60 hover:text-white transition-all border-b border-transparent hover:border-primary pb-1" href="#">Contact</a>
 </div>
 </div>
 </footer>
@@ -353,9 +250,9 @@
 <div id="image-modal" class="fixed inset-0 z-[100] bg-black/95 opacity-0 pointer-events-none transition-opacity duration-500 flex flex-col items-center justify-center p-6 md:p-12 cursor-zoom-out" onclick="closeModal(event)">
     <img id="modal-img" class="w-auto h-auto max-w-[95vw] md:max-w-[85vw] max-h-[70vh] md:max-h-[85vh] object-contain scale-95 transition-transform duration-500 rounded-xl neon-border shadow-2xl relative z-10" onclick="event.stopPropagation()" src="" alt="Full Screen">
     <div id="modal-controls" class="absolute bottom-8 flex items-center gap-4 z-20 delay-100" onclick="event.stopPropagation()">
-        <button onclick="changeModalImg(-1)" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white backdrop-blur transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>
+        <button onclick="changeModalImg(-1)" aria-label="Previous Image" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white backdrop-blur transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>
         <span id="modal-indicator" class="text-white/60 text-sm font-mono tracking-widest bg-black/50 px-4 py-2 rounded-full border border-white/10">1 / 3</span>
-        <button onclick="changeModalImg(1)" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white backdrop-blur transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>
+        <button onclick="changeModalImg(1)" aria-label="Next Image" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white backdrop-blur transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>
     </div>
 </div>
     <script src="./script.js"></script>
