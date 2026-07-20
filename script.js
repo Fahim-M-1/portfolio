@@ -49,7 +49,7 @@
         // Slow idle drift
         const driftAngle = Math.random() * Math.PI * 2;
         const driftAmp = (Math.random() * 0.4 + 0.1) * CONFIG.driftSpeed;
-        
+
         // Twinkle properties
         const twinkleSpeed = 0.01 + Math.random() * 0.04;
         const twinklePhase = Math.random() * Math.PI * 2;
@@ -118,7 +118,7 @@
             const dx = p.x - mouse.x;
             const dy = p.y - mouse.y;
             const distSq = dx * dx + dy * dy;
-            const infSq  = CONFIG.influenceRadius * CONFIG.influenceRadius;
+            const infSq = CONFIG.influenceRadius * CONFIG.influenceRadius;
 
             if (distSq < infSq && distSq > 0.01) {
                 const dist = Math.sqrt(distSq);
@@ -128,7 +128,7 @@
                 // Orbital force: push out when inside ring, pull in when outside
                 // ringForce > 0 → push away; < 0 → pull toward mouse
                 const ringForce = (CONFIG.ringRadius - dist) / CONFIG.ringRadius
-                                  * CONFIG.ringStrength;
+                    * CONFIG.ringStrength;
                 p.vx += nx * ringForce;
                 p.vy += ny * ringForce;
             }
@@ -140,12 +140,12 @@
             // ── Draw particle ──
             ctx.beginPath();
             ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-            
+
             // Twinkle math
             let currentOpacity = p.baseOpacity + Math.sin(tick * p.twinkleSpeed + p.twinklePhase) * p.twinkleAmp;
             if (currentOpacity < 0.05) currentOpacity = 0.05;
             if (currentOpacity > 1) currentOpacity = 1;
-            
+
             ctx.fillStyle = p.colorTemplate.replace('VAL', currentOpacity.toFixed(2));
             ctx.fill();
         });
@@ -205,31 +205,31 @@ document.addEventListener("DOMContentLoaded", () => {
     const sections = Array.from(navItems).map(item => item.getAttribute('href').substring(1));
 
     const observerOptions = {
-      root: null,
-      rootMargin: '-20% 0px -70% 0px',
-      threshold: 0
+        root: null,
+        rootMargin: '-20% 0px -70% 0px',
+        threshold: 0
     };
 
     const observerCallback = (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navItems.forEach(item => {
-            if (item.getAttribute('href') === `#${entry.target.id}`) {
-              item.classList.add('text-[#00E5FF]', 'font-bold', 'border-b-2', 'border-[#00E5FF]', 'pb-1');
-              item.classList.remove('text-white/70');
-            } else {
-              item.classList.remove('text-[#00E5FF]', 'font-bold', 'border-b-2', 'border-[#00E5FF]', 'pb-1');
-              item.classList.add('text-white/70');
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navItems.forEach(item => {
+                    if (item.getAttribute('href') === `#${entry.target.id}`) {
+                        item.classList.add('text-[#00E5FF]', 'font-bold', 'border-b-2', 'border-[#00E5FF]', 'pb-1');
+                        item.classList.remove('text-white/70');
+                    } else {
+                        item.classList.remove('text-[#00E5FF]', 'font-bold', 'border-b-2', 'border-[#00E5FF]', 'pb-1');
+                        item.classList.add('text-white/70');
+                    }
+                });
             }
-          });
-        }
-      });
+        });
     };
 
     const navObserver = new IntersectionObserver(observerCallback, observerOptions);
     sections.forEach(id => {
-      const el = document.getElementById(id);
-      if (el) navObserver.observe(el);
+        const el = document.getElementById(id);
+        if (el) navObserver.observe(el);
     });
 
     // 3. Scroll Reveal Animations (Replacing framer-motion)
@@ -240,11 +240,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Add staggered delay if provided via data attribute
                 const delay = entry.target.getAttribute('data-delay') || '0';
                 entry.target.style.transitionDelay = `${delay}s`;
-                
+
                 // Remove starting transforms, opacity will be handled by utility classes
                 entry.target.classList.remove('opacity-0', 'translate-y-8', 'translate-x-[50px]', '-translate-x-[50px]', 'translate-x-8', '-translate-x-8', 'scale-90');
                 entry.target.classList.add('opacity-100', 'translate-y-0', 'translate-x-0', 'scale-100');
-                
+
                 // Unobserve after animating once (viewport={{ once: true }})
                 obs.unobserve(entry.target);
             }
@@ -256,7 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
         el.classList.add('transition-all', 'duration-700', 'ease-out');
         animationObserver.observe(el);
     });
-    
+
     // 4. Progress Bars Animations
     const progressBars = document.querySelectorAll('.progress-bar');
     const progressObserver = new IntersectionObserver((entries, obs) => {
@@ -268,7 +268,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }, { threshold: 0.5 });
-    
+
     progressBars.forEach(bar => {
         bar.style.width = '0%';
         bar.style.transition = 'width 1.5s ease-out';
@@ -280,7 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const contactTile = document.getElementById('contact-tile');
 
     if (contactNavLink && contactTile) {
-        contactNavLink.addEventListener('click', function(e) {
+        contactNavLink.addEventListener('click', function (e) {
             e.preventDefault();
 
             // Smooth scroll to the tile, vertically centered in viewport
@@ -301,9 +301,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Fallback: Copy Email to Clipboard
-window.copyEmail = function(e, btn) {
-    const emailToCopy = "fahimsndrd@gmail.com";
-    
+window.copyEmail = function (e, btn) {
+    const emailToCopy = "fahim.mahmud.work@gmail.com";
+
     const showSuccess = () => {
         const originalText = "Get in Touch";
         btn.innerText = "Email Copied!";
@@ -355,15 +355,15 @@ document.addEventListener("DOMContentLoaded", () => {
 let currentGalleryImages = [];
 let currentGalleryIndex = 0;
 
-window.openModal = function(imgElement) {
+window.openModal = function (imgElement) {
     const modal = document.getElementById('image-modal');
     const modalImg = document.getElementById('modal-img');
     const controls = document.getElementById('modal-controls');
-    
+
     // Auto-detect other images in the gallery
     const parentNode = imgElement.parentNode;
     const siblingImages = Array.from(parentNode.querySelectorAll('img'));
-    
+
     currentGalleryImages = siblingImages.map(img => img.src);
     currentGalleryIndex = siblingImages.indexOf(imgElement);
 
@@ -374,17 +374,17 @@ window.openModal = function(imgElement) {
         controls.style.display = 'flex';
         updateModalImage(); // Sets the 1 / 3 indicator initially
     }
-    
+
     modalImg.src = currentGalleryImages[currentGalleryIndex];
     modal.classList.remove('pointer-events-none', 'opacity-0');
     modalImg.classList.remove('scale-95');
     modalImg.classList.add('scale-100');
 };
 
-window.closeModal = function(e) {
+window.closeModal = function (e) {
     // Only close if clicking outside the image/buttons
-    if(e && e.target && (e.target.id === 'modal-img' || e.target.closest('#modal-controls'))) return;
-    
+    if (e && e.target && (e.target.id === 'modal-img' || e.target.closest('#modal-controls'))) return;
+
     const modal = document.getElementById('image-modal');
     const modalImg = document.getElementById('modal-img');
     modal.classList.add('pointer-events-none', 'opacity-0');
@@ -392,7 +392,7 @@ window.closeModal = function(e) {
     modalImg.classList.add('scale-95');
 };
 
-window.changeModalImg = function(direction) {
+window.changeModalImg = function (direction) {
     if (currentGalleryImages.length <= 1) return;
     currentGalleryIndex = (currentGalleryIndex + direction + currentGalleryImages.length) % currentGalleryImages.length;
     updateModalImage();
@@ -401,28 +401,28 @@ window.changeModalImg = function(direction) {
 function updateModalImage() {
     const modalImg = document.getElementById('modal-img');
     const indicator = document.getElementById('modal-indicator');
-    
+
     // Add a quick fade effect for transitions
     modalImg.style.opacity = 0.5;
     setTimeout(() => {
         modalImg.src = currentGalleryImages[currentGalleryIndex];
         modalImg.style.opacity = 1;
-        if(indicator) indicator.textContent = `${currentGalleryIndex + 1} / ${currentGalleryImages.length}`;
+        if (indicator) indicator.textContent = `${currentGalleryIndex + 1} / ${currentGalleryImages.length}`;
     }, 150);
 }
 
 // Touch Swiping Logic
 let touchStartX = 0;
 document.addEventListener('touchstart', e => {
-    if(!document.getElementById('image-modal').classList.contains('opacity-0')) {
+    if (!document.getElementById('image-modal').classList.contains('opacity-0')) {
         touchStartX = e.changedTouches[0].screenX;
     }
 });
 
 document.addEventListener('touchend', e => {
-    if(document.getElementById('image-modal').classList.contains('opacity-0')) return;
-    if(currentGalleryImages.length <= 1) return;
-    
+    if (document.getElementById('image-modal').classList.contains('opacity-0')) return;
+    if (currentGalleryImages.length <= 1) return;
+
     let touchEndX = e.changedTouches[0].screenX;
     if (touchEndX < touchStartX - 50) {
         changeModalImg(1); // Swipe left = Next
@@ -493,7 +493,7 @@ document.addEventListener('touchend', e => {
         card.insertBefore(canvas, card.firstChild);
 
         const ctx = canvas.getContext('2d');
-        const W = canvas.width  = card.offsetWidth  || 300;
+        const W = canvas.width = card.offsetWidth || 300;
         const H = canvas.height = card.offsetHeight || 250;
 
         const pts = sampleGlyph(symbol, W, H);
@@ -552,10 +552,10 @@ document.addEventListener('touchend', e => {
             s.ctx.clearRect(0, 0, s.W, s.H);
 
             const spring = s.hovered ? 0.065 : 0.025;
-            const damp   = 0.875;
+            const damp = 0.875;
 
             s.particles.forEach(p => {
-                const w  = Math.sin(s.tick * p.wobS + p.phase) * p.wobR;
+                const w = Math.sin(s.tick * p.wobS + p.phase) * p.wobR;
                 const hx = p.tx + Math.cos(p.phase) * w;
                 const hy = p.ty + Math.sin(p.phase) * w;
 
@@ -592,5 +592,5 @@ document.addEventListener('touchend', e => {
             cardStates.push(buildCard(card));
         });
         if (cardStates.length) rafId = requestAnimationFrame(tick);
-    }).catch(() => {});
+    }).catch(() => { });
 })();
