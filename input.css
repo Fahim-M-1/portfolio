@@ -37,6 +37,52 @@
     .contact-highlight {
         animation: contactPulse 2s ease-out forwards !important;
     }
+    .section-glow {
+        position: relative;
+        overflow: hidden;
+    }
+    .section-glow::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+        height: 70%;
+        background: radial-gradient(ellipse, rgba(129,236,255,0.025) 0%, transparent 70%);
+        pointer-events: none;
+        z-index: 0;
+    }
+    .section-glow > * {
+        position: relative;
+        z-index: 1;
+    }
+    
+    /* Extracted Inline Styles */
+    .fade-bottom-mask {
+        -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    }
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .no-drag {
+        -webkit-user-drag: none;
+        user-select: none;
+    }
+    .particle-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        pointer-events: none;
+    }
 }
 
 @keyframes contactPulse {
@@ -45,3 +91,5 @@
     60%  { box-shadow: 0 0 0 14px rgba(129,236,255,0.08), 0 0 50px 20px rgba(129,236,255,0.08); border-color: rgba(129,236,255,0.5); }
     100% { box-shadow: 0 0 0 0 rgba(129,236,255,0), 0 0 0 0 rgba(129,236,255,0); border-color: rgba(255,255,255,0.08); }
 }
+
+/* Accessibility: respect reduced-motion preferences disabled for testing */

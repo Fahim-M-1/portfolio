@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Fahim-M-1/portfolio#readme",
   "devDependencies": {
+    "@playwright/test": "^1.62.1",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/forms": "^0.5.11",
     "autoprefixer": "^10.5.0",
